@@ -354,11 +354,19 @@ body {
   border-color: var(--azul);
 }
 
-.botoes-form,
-.acoes-card {
+.botoes-form {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+}
+
+.acoes-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .botoes-form button,
@@ -606,14 +614,21 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .botoes-form,
-  .acoes-card {
+  .botoes-form {
     flex-direction: column;
   }
 
-  .botoes-form button,
-  .acoes-card button {
+  .acoes-card {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .botoes-form button {
     width: 100%;
+  }
+
+  .acoes-card button {
+    width: auto;
   }
 
   .rodape-conteudo {

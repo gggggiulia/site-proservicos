@@ -206,7 +206,12 @@ function Gerenciamento() {
       };
     })
   ];
+    const formatarData = (data) => {
+    if (!data || data === '-') return '-';
 
+    const [ano, mes, dia] = data.split('-');
+    return `${dia}-${mes}-${ano}`;
+  };
   return (
     <div>
       <div className="breadcrumb">
@@ -310,7 +315,7 @@ function Gerenciamento() {
                     <td style={{ fontWeight: '600' }}>{item.cliente}</td>
                     <td>{item.servico}</td>
                     <td>{item.prestador}</td>
-                    <td>{item.data}</td>
+                    <td>{formatarData(item.data)}</td>
                     <td>
                       <span className={`status ${item.status.replace(' ', '-').toLowerCase()}`}>
                         {item.status}
