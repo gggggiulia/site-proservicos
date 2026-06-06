@@ -227,7 +227,7 @@ function Gerenciamento() {
       </section>
 
       <section className="crud-card">
-        <h4>{idEmEdicao ? `Editando Contrato ID: ${idEmEdicao}` : 'Cadastrar Novo Cliente'}</h4>
+        <h4>{idEmEdicao ? `Editando Contrato ID: ${idEmEdicao}` : 'Cadastrar Novo Contrato'}</h4>
 
         <form className="form-grid" onSubmit={salvarContrato}>
           <div className="campo-form">
@@ -284,7 +284,7 @@ function Gerenciamento() {
       </section>
 
       <section className="crud-card">
-        <h4>Clientes Cadastrados</h4>
+        <h4>Contratos Cadastrados</h4>
 
         <div className="tabela-wrapper">
           <table className="tabela-contratos">
