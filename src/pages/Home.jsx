@@ -29,7 +29,7 @@ function Home({ servicos }) {
           <span className="breadcrumb-atual">Marketplace de Serviços</span>
           <h3>Contrate profissionais de forma simples, rápida e segura.</h3>
           <p>
-            O ProServiços centraliza serviços residenciais, prestadores cadastrados e gerenciamento de contratos em uma experiência digital organizada para clientes e profissionais.
+            O ProServiços centraliza serviços residenciais, prestadores cadastrados e gerenciamento de contratos em uma experiência digital organizada.
           </p>
           <Link to="/prestadores" className="link-destaque">Conhecer prestadores</Link>
         </div>

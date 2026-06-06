@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Young+Serif&display=swap');
 
 :root {
-  --azul-escuro: #082f63;
-  --azul: #0b4ea2;
+  --azul-escuro: #011229;
+  --azul: #07274e;
   --azul-claro: #dcecff;
   --azul-botao: #eaf3ff;
-  --texto: #1f2937;
+  --texto: #000000;
   --suave: #7a7f87;
   --borda: #e5e7eb;
   --fundo: #fbfcfe;
@@ -31,7 +31,7 @@ body {
   flex-direction: column;
 }
 
-/* cabeçalho azul escuro, logo à esquerda */
+/* cabeçalho azul escuro, logo a esquerda */
 .cabecalho {
   background: var(--azul-escuro);
   color: white;
@@ -194,7 +194,7 @@ body {
   margin: 0;
 }
 
-/* catálogo */
+/* catalogo */
 .grid-servicos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -305,7 +305,7 @@ body {
   font-weight: 700;
 }
 
-/* gerenciamento com tabela preservada */
+/* gerenciamento com tabela */
 .crud-card {
   background: #fff;
   border: 1px solid var(--borda);
@@ -468,7 +468,7 @@ body {
   line-height: 1.6;
 }
 
-/* rodapé azul escuro */
+/* rodape azul escuro */
 .rodape {
   background: var(--azul-escuro);
   color: #fff;
@@ -533,7 +533,7 @@ body {
   color: rgba(255,255,255,0.9);
 }
 
-/* mobile */
+/* mobile app */
 @media (max-width: 768px) {
   .cabecalho-interno {
     min-height: 76px;

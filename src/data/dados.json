@@ -140,14 +140,14 @@
       "cliente": "Marcos Lima",
       "prestadorId": 102,
       "nota": 4,
-      "comentario": "Resolveu o problema com rapidez e explicou tudo com clareza."
+      "comentario": "Resolveu o meu problema com rapidez e explicou tudo com clareza."
     },
     {
       "id": 3,
       "cliente": "Juliana Rocha",
       "prestadorId": 103,
       "nota": 5,
-      "comentario": "Gostei da organização, do cuidado e da comunicação durante o serviço."
+      "comentario": "Gostei da organização e do cuidado durante o serviço."
     }
   ]
 }

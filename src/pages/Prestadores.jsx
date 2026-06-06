@@ -43,7 +43,7 @@ function Prestadores({ prestadores, servicos }) {
       <section className="titulo-padrao">
         <span>Rede de profissionais</span>
         <h3>Prestadores cadastrados</h3>
-        <p>Conheça os profissionais disponíveis para atendimento e os serviços vinculados a cada especialidade.</p>
+        <p>Conheça os nossos profissionais disponíveis para atendimento e os serviços vinculados a cada especialidade.</p>
       </section>
 
       <div className="lista-prestadores">

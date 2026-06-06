@@ -186,7 +186,7 @@ function Gerenciamento() {
       <section className="titulo-padrao">
         <span>Gestão</span>
         <h3>Gerenciamento de contratos</h3>
-        <p>Cadastre, edite e exclua contratos de prestação de serviços sem alterar a estrutura principal da tabela.</p>
+        <p>Cadastre, edite e exclua contratos de prestação de serviços.</p>
       </section>
 
       <section className="crud-card">
@@ -358,7 +358,7 @@ function Gerenciamento() {
         <div className="secao-topo">
           <div>
             <h4>Avaliações dos Clientes</h4>
-            <p>{avaliacoes.length} avaliação(ões) cadastrada(s)</p>
+            <p>{avaliacoes.length} avaliações cadastradas</p>
           </div>
         </div>
 
