@@ -1,0 +1,153 @@
+{
+  "servicos": [
+    {
+      "id": 1,
+      "nome": "Limpeza Residencial Completa",
+      "categoria": "Limpeza",
+      "precoBase": 150.0,
+      "descricao": "Faxina profunda para apartamentos e casas, incluindo aspiração, higienização de banheiros e cozinha.",
+      "imagem": "/imagens/servicos/limpeza.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Instalação de Ar-Condicionado",
+      "categoria": "Instalação",
+      "precoBase": 350.0,
+      "descricao": "Instalação completa de unidades Split de até 12.000 BTUs, com testes de carga e tubulação inclusa.",
+      "imagem": "/imagens/servicos/ar_condicionado.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Conserto de Instalações Elétricas",
+      "categoria": "Conserto",
+      "precoBase": 120.0,
+      "descricao": "Manutenção de tomadas, troca de disjuntores, fiação interna e resolução de curtos-circuitos.",
+      "imagem": "/imagens/servicos/eletrica.jpg"
+    },
+    {
+      "id": 4,
+      "nome": "Instalação e Montagem de Móveis",
+      "categoria": "Montagem",
+      "precoBase": 90.0,
+      "descricao": "Montagem de móveis novos comprados na internet, fixação de painéis de TV, prateleiras, armários de cozinha e reparos em portas ou gavetas.",
+      "imagem": "/imagens/servicos/moveis.jpg"
+    },
+    {
+      "id": 5,
+      "nome": "Pintura Residencial e Retoques",
+      "categoria": "Reparos",
+      "precoBase": 200.0,
+      "descricao": "Pintura de paredes internas, aplicação de massa corrida para cobrir furos e imperfeições, e retoques em portas ou janelas.",
+      "imagem": "/imagens/servicos/pintura.jpg"
+    },
+    {
+      "id": 6,
+      "nome": "Jardinagem e Paisagismo",
+      "categoria": "Exterior",
+      "precoBase": 130.0,
+      "descricao": "Corte de gramado, poda de arbustos e pequenas árvores, limpeza de canteiros e adubação de plantas.",
+      "imagem": "/imagens/servicos/jardinagem.jpg"
+    }
+  ],
+  "prestadores": [
+    {
+      "id": 101,
+      "nome": "Edgar Soares",
+      "especialidade": "Eletricista e Instalador",
+      "avaliacao": 4.8,
+      "telefone": "(11) 99999-1111",
+      "imagem": "/imagens/prestadores/edgar.jpg",
+      "servicosVinculados": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 102,
+      "nome": "Maria Oliveira",
+      "especialidade": "Limpeza e Conservação",
+      "avaliacao": 4.9,
+      "telefone": "(11) 98888-2222",
+      "imagem": "/imagens/prestadores/maria.jpg",
+      "servicosVinculados": [
+        1
+      ]
+    },
+    {
+      "id": 103,
+      "nome": "Ricardo Souza",
+      "especialidade": "Marceneiro e Montador de Móveis",
+      "avaliacao": 4.9,
+      "telefone": "(11) 96543-8888",
+      "imagem": "/imagens/prestadores/ricardo.jpg",
+      "servicosVinculados": [
+        4
+      ]
+    },
+    {
+      "id": 104,
+      "nome": "Juliana Ribeiro",
+      "especialidade": "Pintora Residencial e Acabamentos",
+      "avaliacao": 4.8,
+      "telefone": "(11) 96666-5555",
+      "imagem": "/imagens/prestadores/juliana.jpg",
+      "servicosVinculados": [
+        5
+      ]
+    },
+    {
+      "id": 105,
+      "nome": "Francisco Costa",
+      "especialidade": "Jardineiro e Cuidados Externos",
+      "avaliacao": 4.7,
+      "telefone": "(11) 95555-4444",
+      "imagem": "/imagens/prestadores/francisco.jpg",
+      "servicosVinculados": [
+        6
+      ]
+    }
+  ],
+  "contratos": [
+    {
+      "id": 501,
+      "cliente": "Marilene Matos",
+      "servicoId": 1,
+      "prestadorId": 102,
+      "dataAgendamento": "2026-06-10",
+      "status": "Agendado",
+      "valorTotal": 150.0
+    },
+    {
+      "id": 502,
+      "cliente": "Romero Santos",
+      "servicoId": 2,
+      "prestadorId": 101,
+      "dataAgendamento": "2026-06-12",
+      "status": "Em Andamento",
+      "valorTotal": 350.0
+    }
+  ],
+  "avaliacoes": [
+    {
+      "id": 1,
+      "cliente": "Ana Souza",
+      "prestadorId": 101,
+      "nota": 5,
+      "comentario": "Atendimento excelente, prestador pontual e serviço muito bem feito."
+    },
+    {
+      "id": 2,
+      "cliente": "Marcos Lima",
+      "prestadorId": 102,
+      "nota": 4,
+      "comentario": "Resolveu o problema com rapidez e explicou tudo com clareza."
+    },
+    {
+      "id": 3,
+      "cliente": "Juliana Rocha",
+      "prestadorId": 103,
+      "nota": 5,
+      "comentario": "Gostei da organização, do cuidado e da comunicação durante o serviço."
+    }
+  ]
+}
