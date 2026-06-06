@@ -175,6 +175,38 @@ function Gerenciamento() {
 
   const estrelas = (quantidade) => '★'.repeat(quantidade) + '☆'.repeat(5 - quantidade);
 
+  const clientesCadastrados = [
+    ...contratos.map((contrato) => ({
+      id: contrato.id,
+      cliente: contrato.cliente,
+      servico: obterNomeServico(contrato.servicoId),
+      prestador: obterNomePrestador(contrato.prestadorId),
+      data: contrato.dataAgendamento,
+      status: contrato.status,
+      valor: contrato.valorTotal,
+      tipo: 'Contrato',
+      contratoOriginal: contrato
+    })),
+
+    ...avaliacoes.map((avaliacao) => {
+      const prestador = dadosIniciais.prestadores.find(p => p.id === avaliacao.prestadorId);
+      const servicoId = prestador?.servicosVinculados?.[0];
+      const servico = dadosIniciais.servicos.find(s => s.id === servicoId);
+
+      return {
+        id: 497 + avaliacao.id,
+        cliente: avaliacao.cliente,
+        servico: servico ? servico.nome : 'Avaliação',
+        prestador: obterNomePrestador(avaliacao.prestadorId),
+        data: '2026-05-06',
+        status: 'Concluído',
+        valor: servico ? servico.precoBase : 0,
+        tipo: 'Avaliação',
+        avaliacaoOriginal: avaliacao
+      };
+    })
+  ];
+
   return (
     <div>
       <div className="breadcrumb">
@@ -195,7 +227,7 @@ function Gerenciamento() {
         <form className="form-grid" onSubmit={salvarContrato}>
           <div className="campo-form">
             <label>Nome do Cliente</label>
-            <input value={cliente} onChange={(e) => setCliente(e.target.value)} placeholder="Ex: João Silva" />
+            <input value={cliente} onChange={(e) => setCliente(e.target.value)} placeholder="Ex: João Sampaio" />
           </div>
 
           <div className="campo-form">
@@ -265,36 +297,49 @@ function Gerenciamento() {
             </thead>
 
             <tbody>
-              {contratos.length === 0 ? (
+              {clientesCadastrados.length === 0 ? (
                 <tr>
                   <td colSpan="8" style={{ padding: '20px', textAlign: 'center', color: '#777' }}>
-                    Nenhum contrato registrado.
+                    Nenhum cliente registrado.
                   </td>
                 </tr>
               ) : (
-                contratos.map((contrato) => (
-                  <tr key={contrato.id}>
-                    <td>{contrato.id}</td>
-                    <td style={{ fontWeight: '600' }}>{contrato.cliente}</td>
-                    <td>{obterNomeServico(contrato.servicoId)}</td>
-                    <td>{obterNomePrestador(contrato.prestadorId)}</td>
-                    <td>{contrato.dataAgendamento}</td>
+                clientesCadastrados.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.id}</td>
+                    <td style={{ fontWeight: '600' }}>{item.cliente}</td>
+                    <td>{item.servico}</td>
+                    <td>{item.prestador}</td>
+                    <td>{item.data}</td>
                     <td>
-                      <span className={`status ${contrato.status.replace(' ', '-').toLowerCase()}`}>
-                        {contrato.status}
+                      <span className={`status ${item.status.replace(' ', '-').toLowerCase()}`}>
+                        {item.status}
                       </span>
                     </td>
                     <td style={{ fontWeight: '800', color: '#0b3d91' }}>
-                      R$ {Number(contrato.valorTotal).toFixed(2)}
+                      {item.valor > 0 ? `R$ ${Number(item.valor).toFixed(2)}` : '-'}
                     </td>
                     <td style={{ textAlign: 'center' }}>
                       <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
-                        <button className="btn-tabela btn-editar" onClick={() => iniciarEdicao(contrato)}>
-                          Editar
-                        </button>
-                        <button className="btn-tabela btn-excluir" onClick={() => handleExcluir(contrato.id)}>
-                          Excluir
-                        </button>
+                        {item.tipo === 'Contrato' ? (
+                          <>
+                            <button className="btn-tabela btn-editar" onClick={() => iniciarEdicao(item.contratoOriginal)}>
+                              Editar
+                            </button>
+                            <button className="btn-tabela btn-excluir" onClick={() => handleExcluir(item.id)}>
+                              Excluir
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <button className="btn-tabela btn-editar" onClick={() => editarAvaliacao(item.avaliacaoOriginal)}>
+                              Editar
+                            </button>
+                            <button className="btn-tabela btn-excluir" onClick={() => excluirAvaliacao(item.avaliacaoOriginal.id)}>
+                              Excluir
+                            </button>
+                          </>
+                        )}
                       </div>
                     </td>
                   </tr>
