@@ -185,12 +185,12 @@ function Gerenciamento() {
 
       <section className="titulo-padrao">
         <span>Gestão</span>
-        <h3>Gerenciamento de contratos</h3>
+        <h3>Gerenciamento de Clientes</h3>
         <p>Cadastre, edite e exclua contratos de prestação de serviços.</p>
       </section>
 
       <section className="crud-card">
-        <h4>{idEmEdicao ? `Editando Contrato ID: ${idEmEdicao}` : 'Cadastrar Novo Contrato'}</h4>
+        <h4>{idEmEdicao ? `Editando Contrato ID: ${idEmEdicao}` : 'Cadastrar Novo Cliente'}</h4>
 
         <form className="form-grid" onSubmit={salvarContrato}>
           <div className="campo-form">
@@ -234,7 +234,7 @@ function Gerenciamento() {
 
           <div className="botoes-form">
             <button className="btn-salvar" type="submit">
-              {idEmEdicao ? 'Atualizar' : 'Salvar Contrato'}
+              {idEmEdicao ? 'Atualizar' : 'Salvar Cliente'}
             </button>
 
             {idEmEdicao && (
@@ -247,7 +247,7 @@ function Gerenciamento() {
       </section>
 
       <section className="crud-card">
-        <h4>Contratos Cadastrados</h4>
+        <h4>Clientes Cadastrados</h4>
 
         <div className="tabela-wrapper">
           <table className="tabela-contratos">
